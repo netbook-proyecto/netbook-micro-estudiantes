@@ -1,0 +1,13 @@
+### Guardar un nuevo estudiante en netBOOK
+POST http://localhost:5002/api/estudiantes
+Content-Type: application/json
+
+{
+    "rut": "19876543-2",
+    "nombres": "Juan Pablo",
+    "apellidoPaterno": "Pérez",
+    "apellidoMaterno": "González",
+    "correoInstitucional": "juan.perez@duocuc.cl",
+    "fechaNacimiento": "2005-08-15",
+    "telefonoEmergencia": "+56912345678"
+}
