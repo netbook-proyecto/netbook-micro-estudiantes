@@ -17,4 +17,7 @@ public class Apoderado extends Usuario {
     
     @Column(nullable = false)
     private String ocupacion;
+    
+    @Column(nullable = false)
+    private String parentesco;
 }
