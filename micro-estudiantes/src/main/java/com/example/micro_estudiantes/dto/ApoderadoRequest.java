@@ -14,10 +14,10 @@ public class ApoderadoRequest {
     @NotBlank(message = "Los nombres son obligatorios")
     private String nombres;
     
-    @NotBlank(message = "El apellido paterno es obligatorio") // <-- TEXTO CORREGIDO
+    @NotBlank(message = "El apellido paterno es obligatorio") 
     private String apellidoPaterno;
     
-    @NotBlank(message = "El apellido materno es obligatorio") // <-- TEXTO CORREGIDO
+    @NotBlank(message = "El apellido materno es obligatorio") 
     private String apellidoMaterno;
     
     @NotBlank(message = "El correo institucional es obligatorio")
