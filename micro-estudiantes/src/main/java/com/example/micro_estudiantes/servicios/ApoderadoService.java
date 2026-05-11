@@ -65,4 +65,4 @@ public class ApoderadoService {
         apoderado.setTelefonoContacto(request.getTelefonoContacto());
         apoderado.setOcupacion(request.getOcupacion());
     }
-}
+}     

@@ -18,6 +18,6 @@ public class SwaggerConfig {
                         .version("1.0.0")
                         .contact(new Contact()
                                 .name("Cristopher Candia")
-                                .email("cr.candiam@duocuc.cl"))); // Cambia esto por tu correo real
+                                .email("cr.candiam@duocuc.cl"))); 
     }
 }

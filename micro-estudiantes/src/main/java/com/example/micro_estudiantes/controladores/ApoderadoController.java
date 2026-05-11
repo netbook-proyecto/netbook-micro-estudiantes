@@ -43,7 +43,7 @@ public class ApoderadoController {
         return service.guardar(request);
     }
     
-    @PutMapping("/{id}") // 
+    @PutMapping("/{id}") 
     public Apoderado editar(@PathVariable Long id, @Valid @RequestBody ApoderadoRequest request){
         return service.actualizar(id, request);
     }
