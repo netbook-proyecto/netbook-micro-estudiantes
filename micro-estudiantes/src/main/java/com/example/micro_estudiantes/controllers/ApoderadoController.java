@@ -1,4 +1,4 @@
-package com.example.micro_estudiantes.controladores;
+package com.example.micro_estudiantes.controllers;
 
 import java.util.List;
 
@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.micro_estudiantes.dto.ApoderadoRequest;
-import com.example.micro_estudiantes.model.Apoderado;
-import com.example.micro_estudiantes.servicios.ApoderadoService;
+import com.example.micro_estudiantes.models.entities.Apoderado;
+import com.example.micro_estudiantes.models.request.ApoderadoRequest;
+import com.example.micro_estudiantes.services.ApoderadoService;
 
 import jakarta.validation.Valid;
 

@@ -1,4 +1,4 @@
-package com.example.micro_estudiantes.model;
+package com.example.micro_estudiantes.models.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;

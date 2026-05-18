@@ -1,4 +1,4 @@
-package com.example.micro_estudiantes.dto;
+package com.example.micro_estudiantes.models.request;
 
 import java.time.LocalDate;
 

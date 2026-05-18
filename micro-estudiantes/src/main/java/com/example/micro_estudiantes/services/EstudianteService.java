@@ -1,4 +1,4 @@
-package com.example.micro_estudiantes.servicios;
+package com.example.micro_estudiantes.services;
 
 import java.util.List;
 
@@ -7,9 +7,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.example.micro_estudiantes.dto.EstudianteRequest;
-import com.example.micro_estudiantes.model.Estudiante;
-import com.example.micro_estudiantes.repositorios.EstudianteRepository;
+import com.example.micro_estudiantes.models.entities.Estudiante;
+import com.example.micro_estudiantes.models.request.EstudianteRequest;
+import com.example.micro_estudiantes.repositories.EstudianteRepository;
 
 @Service
 public class EstudianteService {

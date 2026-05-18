@@ -1,4 +1,4 @@
-package com.example.micro_estudiantes.config;
+package com.example.micro_estudiantes.confing;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Contact;

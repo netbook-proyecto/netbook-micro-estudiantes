@@ -1,10 +1,10 @@
-package com.example.micro_estudiantes.repositorios;
+package com.example.micro_estudiantes.repositories;
 
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.micro_estudiantes.model.Estudiante;
+import com.example.micro_estudiantes.models.entities.Estudiante;
 
 
 public interface EstudianteRepository  extends JpaRepository<Estudiante, Long>{

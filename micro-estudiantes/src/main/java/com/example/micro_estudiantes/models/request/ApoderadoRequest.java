@@ -1,4 +1,4 @@
-package com.example.micro_estudiantes.dto;
+package com.example.micro_estudiantes.models.request;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

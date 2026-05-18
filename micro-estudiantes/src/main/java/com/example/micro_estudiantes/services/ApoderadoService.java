@@ -1,4 +1,4 @@
-package com.example.micro_estudiantes.servicios;
+package com.example.micro_estudiantes.services;
 
 import java.util.List;
 
@@ -7,9 +7,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.example.micro_estudiantes.dto.ApoderadoRequest;
-import com.example.micro_estudiantes.model.Apoderado;
-import com.example.micro_estudiantes.repositorios.ApoderadoRepository;
+import com.example.micro_estudiantes.models.entities.Apoderado;
+import com.example.micro_estudiantes.models.request.ApoderadoRequest;
+import com.example.micro_estudiantes.repositories.ApoderadoRepository;
 
 @Service
 public class ApoderadoService {
