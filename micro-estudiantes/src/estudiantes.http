@@ -1,0 +1,52 @@
+@url = http://localhost:5002/api/estudiantes
+
+### 1. Crear un Estudiante (POST)
+POST {{url}}
+Content-Type: application/json
+
+{
+    "rut": "21.987.654-3",
+    "nombres": "Martín Ignacio",
+    "apellidoPaterno": "González",
+    "apellidoMaterno": "Tapia",
+    "correoInstitucional": "martin.gonzalez@alumnos.colegio.cl",
+    "fechaNacimiento": "2010-05-15",
+    "telefonoEmergencia": "+56998765432"
+}
+
+### 2. Listar todos los Estudiantes (GET)
+GET {{url}}
+
+### 3. Buscar Estudiante por ID (GET)
+GET {{url}}/1
+
+### 4. Actualizar un Estudiante (PUT)
+PUT {{url}}/1
+Content-Type: application/json
+
+{
+    "rut": "21.987.654-3",
+    "nombres": "Martín Ignacio",
+    "apellidoPaterno": "González",
+    "apellidoMaterno": "Tapia",
+    "correoInstitucional": "martin.gonzalez@alumnos.colegio.cl",
+    "fechaNacimiento": "2010-05-15",
+    "telefonoEmergencia": "+56911111111"
+}
+
+### 5. Eliminar un Estudiante (DELETE)
+DELETE {{url}}/1
+
+### 6. PRUEBA DE VALIDACIÓN (Debería fallar)
+POST {{url}}
+Content-Type: application/json
+
+{
+    "rut": "",
+    "nombres": "Pedro",
+    "apellidoPaterno": "Pérez",
+    "apellidoMaterno": "Soto",
+    "correoInstitucional": "pedro@alumnos.colegio.cl",
+    "fechaNacimiento": "2011-08-20",
+    "telefonoEmergencia": "+56922223333"
+}
