@@ -1,9 +1,9 @@
-package com.example.micro_estudiantes.confing;
+package com.example.micro_estudiantes.config;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
-import io.swagger.v3.oas.models.servers.Server; // <-- 1. Nueva importación para el Servidor
+import io.swagger.v3.oas.models.servers.Server; 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -21,7 +21,7 @@ public class SwaggerConfig {
                                 .name("Cristopher Candia")
                                 .email("cr.candiam@duocuc.cl")))
                 .addServersItem(new Server()
-                        .url("http://localhost:5002/swagger-ui/index.html")
+                        .url("http://localhost:5002") 
                         .description("Servidor Local (Microservicio Estudiantes)")); 
     }
 }

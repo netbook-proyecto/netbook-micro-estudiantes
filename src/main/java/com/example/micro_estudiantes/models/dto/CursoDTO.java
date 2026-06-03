@@ -1,5 +1,9 @@
-package com.example.micro_estudiantes.models.dto; 
-public record CursoDTO(
-    Integer id,
-    String nombreCurso
-) {}
+package com.example.micro_estudiantes.models.dto;
+
+import lombok.Data;
+
+@Data
+public class CursoDTO {
+    private Integer id;
+    private String nombreCurso;
+}
