@@ -27,7 +27,6 @@ public class EstudianteService {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "El RUT estudiante ya existe");
         }
 
-        // --- INICIO VALIDACIÓN DE MICROSERVICIOS (CONEXIÓN 5002 -> 5004) ---
         Integer idCursoBuscado = request.getIdCurso(); 
         
         if (idCursoBuscado != null) {
@@ -56,21 +55,22 @@ public class EstudianteService {
         
         estudiante.setPorcentajeAsistencia(0.0);
         estudiante.setPromedioNotas(0.0);
+        
         return estudianteRepository.save(estudiante);
     }
     
-    //listar todos
-    public List<Estudiante>listarTodos(){
+    //LISTAR TODOS
+    public List<Estudiante> listarTodos(){
         return estudianteRepository.findAll();
     }
     
-    //buscar por id
+    //BUSCAR POR ID
     public Estudiante buscarPorId(Long id){
         return estudianteRepository.findById(id)
-            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "El estudiante no existe"+ id));
+            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "El estudiante no existe con ID: " + id));
     }
     
-    //actualizar
+    //ACTUALIZAR DATOS
     public Estudiante actualizar(Long id, EstudianteRequest request){
         Estudiante estudiante = buscarPorId(id);
 
@@ -84,9 +84,25 @@ public class EstudianteService {
         return estudianteRepository.save(estudiante);
     }
     
-    //eliminar
+    //ELIMINAR
     public void eliminar(Long id){
         Estudiante estudiante = buscarPorId(id);
         estudianteRepository.delete(estudiante);
+    }
+
+ 
+    //actualice el promedio de notas
+    public Estudiante actualizarPromedioNotas(Long idEstudiante, Double nuevoPromedio) {
+        // Reutilizamos el método buscarPorId para no repetir código
+        Estudiante estudiante = buscarPorId(idEstudiante);
+        estudiante.setPromedioNotas(nuevoPromedio);
+        return estudianteRepository.save(estudiante);
+    }
+
+    //actualice la asistencia
+    public Estudiante actualizarAsistencia(Long idEstudiante, Double nuevaAsistencia) {
+        Estudiante estudiante = buscarPorId(idEstudiante);
+        estudiante.setPorcentajeAsistencia(nuevaAsistencia);
+        return estudianteRepository.save(estudiante);
     }
 }
