@@ -51,8 +51,6 @@ public class ApoderadoService {
         Apoderado apoderado = buscarPorId(id);
         repository.delete(apoderado);
     }
-
-    // mapeador para no repetir código
     private void mapearDatos(Apoderado apoderado, ApoderadoRequest request) {
         apoderado.setRut(request.getRut());
         apoderado.setNombres(request.getNombres());
@@ -60,7 +58,6 @@ public class ApoderadoService {
         apoderado.setApellidoMaterno(request.getApellidoMaterno());
         apoderado.setCorreoInstitucional(request.getCorreoInstitucional());
         
-        // datos exclusivos del apoderado
         apoderado.setParentesco(request.getParentesco());
         apoderado.setTelefonoContacto(request.getTelefonoContacto());
         apoderado.setOcupacion(request.getOcupacion());

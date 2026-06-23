@@ -44,10 +44,10 @@ public class EstudianteService {
     try {
         UsuarioAuthDTO nuevoUsuario = new UsuarioAuthDTO();
         nuevoUsuario.setCorreoInstitucional(request.getCorreoInstitucional());
-        nuevoUsuario.setContrasenia("Bernardo2026@"); // Contraseña por defecto
+        nuevoUsuario.setContrasenia("Bernardo2026@"); 
 
         authWebClient.post()
-            .uri("/api/auth/register") // <--- RUTA CORREGIDA (Exacta según el @RequestMapping de Auth)
+            .uri("/api/auth/register")
             .bodyValue(nuevoUsuario)
             .retrieve()
             .toBodilessEntity()

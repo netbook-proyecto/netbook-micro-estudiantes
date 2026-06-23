@@ -8,8 +8,5 @@ import com.example.micro_estudiantes.models.entities.Apoderado;
 
 public interface ApoderadoRepository  extends JpaRepository<Apoderado, Long>{
     Optional<Apoderado> findByRut(String rut);
-    
-
-
-    
+       
 }

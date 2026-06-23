@@ -34,7 +34,6 @@ public class EstudianteRequest {
     @NotBlank(message = "El telefono de emergencia es obligatorio")
     private String telefonoEmergencia;
 
-    @NotNull(message = "El ID del curso es obligatorio para matricular al estudiante")
     private Integer idCurso;
   
 }
