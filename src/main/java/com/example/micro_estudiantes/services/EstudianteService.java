@@ -40,11 +40,12 @@ public class EstudianteService {
             }
         }
 
-        // Creación WebClient Auth
+        // Creacion WebClient Auth
     try {
         UsuarioAuthDTO nuevoUsuario = new UsuarioAuthDTO();
         nuevoUsuario.setCorreoInstitucional(request.getCorreoInstitucional());
         nuevoUsuario.setContrasenia("Bernardo2026@"); 
+        nuevoUsuario.setRol("ESTUDIANTE");
 
         authWebClient.post()
             .uri("/api/auth/register")
@@ -75,37 +76,30 @@ public class EstudianteService {
     }
     
     public Estudiante buscarPorId(Long id){
-        Estudiante estudiante = estudianteRepository.findById(id).orElse(null);
-        if (estudiante == null) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No encontramos al estudiante");
-        }
-        return estudiante;
-    }
+        return estudianteRepository.findById(id)
+            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "No encontramos al estudiante"));
     
+    }
     public Estudiante actualizar(Long id, EstudianteRequest request){
-        Estudiante estudiante = estudianteRepository.findById(id).orElse(null);
-        
-        if (estudiante == null) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No encontramos al estudiante");
-        } else {
-            estudiante.setNombres(request.getNombres());
-            estudiante.setApellidoPaterno(request.getApellidoPaterno());
-            estudiante.setApellidoMaterno(request.getApellidoMaterno());
-            estudiante.setCorreoInstitucional(request.getCorreoInstitucional());
-            estudiante.setFechaNacimiento(request.getFechaNacimiento());
-            estudiante.setTelefonoEmergencia(request.getTelefonoEmergencia());
+        Estudiante estudiante = estudianteRepository.findById(id)
+            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "No encontramos al estudiante"));
+        mapearEstudiante(estudiante, request);
+        return estudianteRepository.save(estudiante);
 
-            return estudianteRepository.save(estudiante);
-        }
+    }
+    private void mapearEstudiante(Estudiante estudiante, EstudianteRequest request) {
+        estudiante.setRut(request.getRut());
+        estudiante.setNombres(request.getNombres());
+        estudiante.setApellidoPaterno(request.getApellidoPaterno());
+        estudiante.setApellidoMaterno(request.getApellidoMaterno());
+        estudiante.setCorreoInstitucional(request.getCorreoInstitucional());
+        estudiante.setFechaNacimiento(request.getFechaNacimiento());
+        estudiante.setTelefonoEmergencia(request.getTelefonoEmergencia());
+        estudiante.setIdCurso(request.getIdCurso());
     }
     
     public void eliminar(Long id){
-        Estudiante estudiante = estudianteRepository.findById(id).orElse(null);
-        
-        if (estudiante == null) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No encontramos al estudiante");
-        } else {
-            estudianteRepository.delete(estudiante);
-        }
+        Estudiante estudiante = buscarPorId(id);
+        estudianteRepository.delete(estudiante);
     }
 }

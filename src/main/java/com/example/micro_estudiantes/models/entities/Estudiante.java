@@ -20,10 +20,8 @@ public class Estudiante extends Usuario{
     @Column(nullable = false)
     private String telefonoEmergencia;
 
-    @Column(nullable = false)
     private Double promedioNotas;
 
-    @Column(nullable = false)
     private Double porcentajeAsistencia;
 
     @Column(name = "id_curso")

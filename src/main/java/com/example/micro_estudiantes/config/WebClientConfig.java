@@ -13,11 +13,11 @@ public class WebClientConfig {
                 .baseUrl("http://localhost:5004/cursos")
                 .build();
     }
-
+    
     @Bean
     public WebClient authWebClient() {
         return WebClient.builder()
-                .baseUrl("http://localhost:5001/auth")
+                .baseUrl("http://localhost:5001")
                 .build();
     }
 }

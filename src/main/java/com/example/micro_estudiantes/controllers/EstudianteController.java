@@ -25,33 +25,33 @@ import jakarta.validation.Valid;
 public class EstudianteController {
 
     @Autowired
-    private EstudianteService Service;
+    private EstudianteService service;
 
     
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Estudiante crear(@Valid @RequestBody EstudianteRequest request){
-        return Service.guardar(request);
+        return service.guardar(request);
     }
     
     @GetMapping
     public List<Estudiante> listar(){
-        return Service.listarTodos();
+        return service.listarTodos();
     }
 
     @GetMapping("/{id}")
     public Estudiante buscar(@PathVariable long id){
-        return Service.buscarPorId(id);
+        return service.buscarPorId(id);
     }
 
     @PutMapping("/{id}")
     public Estudiante actualizar(@PathVariable long id, @Valid @RequestBody EstudianteRequest request) {
-        return Service.actualizar(id, request);
+        return service.actualizar(id, request);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void eliminar(@PathVariable long id){
-        Service.eliminar(id);
+        service.eliminar(id);
     }
 }
