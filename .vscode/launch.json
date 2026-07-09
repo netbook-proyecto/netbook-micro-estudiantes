@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-MicroEstudiantesApplication<micro-estudiantes>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.micro_estudiantes.MicroEstudiantesApplication",
+            "projectName": "micro-estudiantes",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

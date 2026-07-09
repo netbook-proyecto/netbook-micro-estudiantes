@@ -1,0 +1,55 @@
+@url =  http://localhost:5002/api/apoderados
+
+### 1. Crear un Apoderado (POST)
+POST {{url}}
+Content-Type: application/json
+
+{
+    "rut": "12.345.678-9",
+    "nombres": "María Isabel",
+    "apellidoPaterno": "González",
+    "apellidoMaterno": "Tapia",
+    "correoInstitucional": "mgonzalez@duocuc.cl",
+    "parentesco": "Madre",
+    "telefonoContacto": "+56912345678",
+    "ocupacion": "Contadora"
+}
+
+### 2. Listar todos los Apoderados (GET)
+GET {{url}}
+
+### 3. Buscar Apoderado por ID (GET)
+GET {{url}}/2
+
+### 4. Actualizar un Apoderado (PUT)
+PUT {{url}}/2
+Content-Type: application/json
+
+{
+    "rut": "12.345.678-9",
+    "nombres": "María Isabel",
+    "apellidoPaterno": "González",
+    "apellidoMaterno": "Tapia",
+    "correoInstitucional": "mgonzalez@duocuc.cl",
+    "parentesco": "Madre",
+    "telefonoContacto": "+56999999999",
+    "ocupacion": "Ingeniera Comercial"
+}
+
+### 5. Eliminar un Apoderado (DELETE)
+DELETE {{url}}/2
+
+### 6. PRUEBA DE VALIDACIÓN (Debería fallar)
+POST {{url}}
+Content-Type: application/json
+
+{
+    "rut": "",
+    "nombres": "Juan",
+    "apellidoPaterno": "Pérez",
+    "apellidoMaterno": "Soto",
+    "correoInstitucional": "juan@correo.cl",
+    "parentesco": "Padre",
+    "telefonoContacto": "+56911112222",
+    "ocupacion": "Profesor"
+}

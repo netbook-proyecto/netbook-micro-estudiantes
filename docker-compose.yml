@@ -1,0 +1,21 @@
+services:
+  micro-estudiantes:
+    build: .
+    container_name: micro-estudiantes
+    restart: unless-stopped
+    ports:
+      - "5002:5002"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://host.docker.internal:3306/db_estudiantes?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: microser_estudiantes
+      SPRING_DATASOURCE_PASSWORD: Estud.2026@
+      APP_ACADEMICO_BASE_URL: http://micro-academico:5004/academico
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - red-microservicios
+
+networks:
+  red-microservicios:
+    external: true
+    
